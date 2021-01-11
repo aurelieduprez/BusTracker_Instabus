@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPostActivity">
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_margin="20dp"
+        android:text="Add a pciture to ..."
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <ImageView
+        android:id="@+id/addImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_title"
+        android:src="@drawable/ic_baseline_add_a_photo_150"/>
+
+    <EditText
+        android:id="@+id/addDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Description"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addImage" />
+
+    <Button
+        android:id="@+id/AddPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>
