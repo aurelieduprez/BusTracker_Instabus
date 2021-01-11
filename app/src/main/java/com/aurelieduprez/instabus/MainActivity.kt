@@ -12,8 +12,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.benjazor.instabus.data.ApiResponse
-import com.benjazor.instabus.data.Station
+import com.aurelieduprez.instabus.data.ApiResponse
+import com.aurelieduprez.instabus.data.Station
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package com.benjazor.instabus.data
+package com.aurelieduprez.instabus.data
 
 data class Station (
     val id: String,

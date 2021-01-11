@@ -1,6 +1,6 @@
 package com.aurelieduprez.instabus
 
-import com.benjazor.instabus.data.ApiResponse
+import com.aurelieduprez.instabus.data.ApiResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

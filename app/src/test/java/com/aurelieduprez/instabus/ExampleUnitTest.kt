@@ -1,4 +1,4 @@
-package com.benjazor.instabus
+package com.aurelieduprez.instabus
 
 import org.junit.Test
 

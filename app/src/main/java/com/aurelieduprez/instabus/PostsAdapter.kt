@@ -26,7 +26,7 @@ class PostsAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostsAd
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (position%2==1) {
-            holder.itemView.setBackgroundColor(Color.parseColor("#DFDFDF")) // tamer
+            holder.itemView.setBackgroundColor(Color.parseColor("#DFDFDF"))
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"))
 
