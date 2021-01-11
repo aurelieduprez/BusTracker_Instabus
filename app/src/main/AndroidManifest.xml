@@ -20,7 +20,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main2"><intent-filter>
+            android:label="@string/title_activity_main2">
+            <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
@@ -39,9 +40,7 @@
 
         <activity android:name=".AddPostActivity" />
         <activity android:name=".StationPosts" />
-        <activity android:name=".StationList">
 
-        </activity>
     </application>
 
 </manifest>

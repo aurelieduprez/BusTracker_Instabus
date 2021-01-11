@@ -21,7 +21,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-var station = listOf<Station>()
+    companion object{
+        var station : List<Station> = listOf();
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (ContextCompat.checkSelfPermission(this,
@@ -55,7 +57,7 @@ var station = listOf<Station>()
                 Log.d("station", station.toString());
             }
         })
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)

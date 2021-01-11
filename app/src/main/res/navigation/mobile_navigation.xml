@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.aurelieduprez.instabus.StationList"
+        android:name="com.aurelieduprez.instabus.ItemFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/fragment_item_list" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
