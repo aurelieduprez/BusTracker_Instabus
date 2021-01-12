@@ -14,6 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aurelieduprez.instabus.data.ApiResponse
 import com.aurelieduprez.instabus.data.Station
+import com.google.android.gms.tasks.Tasks.await
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,9 +47,10 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val api = retrofit.create(Api::class.java)
+
         api.fetchAllStations().enqueue(object : Callback<ApiResponse> {
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
-                Toast.makeText(applicationContext, "Internet is required to load the stations", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Internet connection is needed.", Toast.LENGTH_LONG).show()
 
             }
 

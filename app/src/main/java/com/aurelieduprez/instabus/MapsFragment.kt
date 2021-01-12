@@ -22,8 +22,9 @@ class MapsFragment : Fragment() {
         station.forEach{ station: Station ->
             var stationPos = LatLng(station.lat, station.lon);
             var zoomLevel = 16.0f;
-            googleMap.addMarker(MarkerOptions().position(stationPos).title(station.street_name))
+            googleMap.addMarker(MarkerOptions().position(stationPos).title(station.street_name).snippet(station.buses))
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stationPos, zoomLevel))
+
         }
         /**
          * Manipulates the map once available.
