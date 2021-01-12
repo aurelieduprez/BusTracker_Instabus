@@ -7,12 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.aurelieduprez.instabus.data.Station
 
-import com.aurelieduprez.instabus.dummy.DummyContent.DummyItem
-
-/**
- * [RecyclerView.Adapter] that can display a [DummyItem].
- * TODO: Replace the implementation with code for your data type.
- */
 class MyItemRecyclerViewAdapter(
     private val values: List<Station>
 ) : RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {

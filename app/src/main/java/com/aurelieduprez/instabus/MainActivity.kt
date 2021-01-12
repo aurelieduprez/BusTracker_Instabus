@@ -4,6 +4,9 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,9 +16,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurelieduprez.instabus.data.ApiResponse
 import com.aurelieduprez.instabus.data.Station
 import com.google.android.gms.tasks.Tasks.await
+import kotlinx.android.synthetic.main.activity_station_posts.*
+import kotlinx.android.synthetic.main.post_row.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -87,6 +93,20 @@ class MainActivity : AppCompatActivity() {
         val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
         startActivity(mainActivityIntent)
         finish()
+    }
+
+    public fun showDetails(v: View){
+        setContentView(R.layout.station_row)
+    }
+
+    public fun returnButton (v: View){
+        val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
+        startActivity(mainActivityIntent)
+        finish()
+    }
+
+    public fun postPic(v:View){
+        setContentView(R.layout.post_row)
     }
 
 

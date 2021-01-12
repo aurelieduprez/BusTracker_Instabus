@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.aurelieduprez.instabus.MainActivity.Companion.station
 import com.aurelieduprez.instabus.data.Station
-import com.aurelieduprez.instabus.dummy.DummyContent
+
 
 /**
  * A fragment representing a list of Items.
@@ -22,7 +22,6 @@ class ItemFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("test", "testettetet");
 
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
@@ -45,6 +44,7 @@ class ItemFragment : Fragment() {
                 adapter = MyItemRecyclerViewAdapter(station)
             }
         }
+
         return view
     }
 
@@ -62,4 +62,5 @@ class ItemFragment : Fragment() {
                 }
             }
     }
+
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -8,16 +9,15 @@
         android:id="@+id/post_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="Post your picture"
+        android:textColor="#000"
+        android:textSize="20sp"
+
         app:layout_constraintBottom_toBottomOf="@id/post_image"
-        app:layout_constraintTop_toTopOf="@id/post_image"
         app:layout_constraintLeft_toRightOf="@+id/post_image"
         app:layout_constraintRight_toRightOf="parent"
-
-        android:padding="20dp"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:text="Hello World"
-        />
+        app:layout_constraintTop_toTopOf="@id/post_image" />
     
     <ImageView
 
@@ -30,5 +30,18 @@
         android:src="@drawable/ic_baseline_add_a_photo_150"
 
         />
+
+    <ImageButton
+        android:id="@+id/photo2"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_marginRight="4dp"
+        android:onClick="returnButton"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

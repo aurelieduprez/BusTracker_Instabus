@@ -13,7 +13,7 @@ import com.aurelieduprez.instabus.data.Station
 import kotlinx.android.synthetic.main.station_row.view.*
 
 
-class StationsAdapater(private val stations: List<Station>) : RecyclerView.Adapter<StationsAdapater.ViewHolder>() {
+class StationsAdapter(private val stations: List<Station>) : RecyclerView.Adapter<StationsAdapter.ViewHolder>() {
 
 
     private var parentContext: Context? = null
