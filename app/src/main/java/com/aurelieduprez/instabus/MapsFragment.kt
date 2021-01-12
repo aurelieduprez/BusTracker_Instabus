@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.aurelieduprez.instabus.MainActivity.Companion.station
+import com.aurelieduprez.instabus.data.Station
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -17,6 +19,12 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsFragment : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
+        station.forEach{ station: Station ->
+            var stationPos = LatLng(station.lat, station.lon);
+            var zoomLevel = 16.0f;
+            googleMap.addMarker(MarkerOptions().position(stationPos).title(station.street_name))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stationPos, zoomLevel))
+        }
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
@@ -26,10 +34,7 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val barcelona = LatLng(41.38, 2.18);
-        var zoomLevel = 12.0f;
-        googleMap.addMarker(MarkerOptions().position(barcelona).title("Marker in Barcelona"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(barcelona, zoomLevel))
+
     }
 
     override fun onCreateView(inflater: LayoutInflater,
