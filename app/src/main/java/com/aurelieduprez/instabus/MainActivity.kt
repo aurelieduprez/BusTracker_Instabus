@@ -1,5 +1,6 @@
 package com.aurelieduprez.instabus
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -41,37 +42,51 @@ class MainActivity : AppCompatActivity() {
                     123)
             }
         }
-        // Setup retrofit
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://barcelonaapi.marcpous.com")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val api = retrofit.create(Api::class.java)
 
-        api.fetchAllStations().enqueue(object : Callback<ApiResponse> {
-            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
-                Toast.makeText(applicationContext, "Internet connection is needed.", Toast.LENGTH_LONG).show()
+        setContentView(R.layout.activity_splash_screen)
+        if (station.isEmpty()){
+            setContentView(R.layout.activity_splash_screen)
+            // Setup retrofit
+            val retrofit = Retrofit.Builder()
+                .baseUrl("http://barcelonaapi.marcpous.com")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val api = retrofit.create(Api::class.java)
 
-            }
+            api.fetchAllStations().enqueue(object : Callback<ApiResponse> {
+                override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                    Toast.makeText(applicationContext, "Internet connection is needed.", Toast.LENGTH_LONG).show()
 
-            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
-                station = response.body()!!.data.nearstations
-                Log.d("station", station.toString());
-            }
-        })
-        setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+                }
 
-        val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard
+                override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                    station = response.body()!!.data.nearstations
+                    gotoMainActivity()
+                    Log.d("station", station.toString());
+                }
+            })
+        }else{
+            setContentView(R.layout.activity_main)
+            val navView: BottomNavigationView = findViewById(R.id.nav_view)
+
+            val navController = findNavController(R.id.nav_host_fragment)
+            // Passing each menu ID as a set of Ids because each
+            // menu should be considered as top level destinations.
+            val appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.navigation_home, R.id.navigation_dashboard
+                )
             )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+            setupActionBarWithNavController(navController, appBarConfiguration)
+            navView.setupWithNavController(navController)
+        }
+
+
+    }
+    private fun gotoMainActivity(){
+        val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
+        startActivity(mainActivityIntent)
+        finish()
     }
 
 
