@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurelieduprez.instabus.data.ApiResponse
 import com.aurelieduprez.instabus.data.Station
 import com.google.android.gms.tasks.Tasks.await
-import kotlinx.android.synthetic.main.activity_station_posts.*
 import kotlinx.android.synthetic.main.post_row.view.*
 import retrofit2.Call
 import retrofit2.Callback
