@@ -24,6 +24,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:paddingHorizontal="20dp"
+        android:text="Gallery for this station: "
         android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.094"
-        tools:text="Almog\u00e0vers-\u00c0vila" />
+        tools:text="Gallery for this station: " />
 
     <ImageView
         android:id="@+id/imageView3"

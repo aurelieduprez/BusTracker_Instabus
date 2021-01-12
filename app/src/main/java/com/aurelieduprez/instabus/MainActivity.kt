@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                     station = response.body()!!.data.nearstations
+                    Thread.sleep(1000)
                     gotoMainActivity()
                     Log.d("station", station.toString());
                 }
