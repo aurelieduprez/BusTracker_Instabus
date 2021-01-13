@@ -19,12 +19,12 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsFragment : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
+    var barcelona = LatLng(41.398, 2.19)
         station.forEach{ station: Station ->
             var stationPos = LatLng(station.lat, station.lon);
-            var zoomLevel = 16.0f;
+            var zoomLevel = 14.0f;
             googleMap.addMarker(MarkerOptions().position(stationPos).title(station.street_name).snippet(station.buses))
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stationPos, zoomLevel))
-
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(barcelona, zoomLevel))
         }
         /**
          * Manipulates the map once available.
@@ -35,6 +35,7 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
+
 
     }
 
