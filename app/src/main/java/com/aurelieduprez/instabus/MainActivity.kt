@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurelieduprez.instabus.data.ApiResponse
 import com.aurelieduprez.instabus.data.Station
 import com.google.android.gms.tasks.Tasks.await
-import kotlinx.android.synthetic.main.post_row.view.*
+import kotlinx.android.synthetic.main.post_preview.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -96,7 +96,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     public fun showDetails(v: View){
-        setContentView(R.layout.station_row)
+        //to get station name
+        //val stationName:String = intent.getStringExtra("EXTRA_STATION_NAME")
+        //Log.d ("ICICICICIICICI", stationName)
+        setContentView(R.layout.station_preview)
     }
 
     public fun returnButton (v: View){
@@ -106,7 +109,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     public fun postPic(v:View){
-        setContentView(R.layout.post_row)
+        setContentView(R.layout.post_preview)
+    }
+
+    public fun addPic(v:View){
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+        intent.type = "image/*"
+        startActivityForResult(intent, 666)
     }
 
 
