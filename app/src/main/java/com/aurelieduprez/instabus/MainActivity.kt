@@ -27,6 +27,12 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ Activity principale de l'app et definition des permissions
+  */
+
+
+
 class MainActivity : AppCompatActivity() {
     companion object{
         var station : List<Station> = listOf();

@@ -15,7 +15,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-
+/**
+ Fragment qui définit la mise en place de la map et les marqueurs a chaque station
+ * */
 class MapsFragment : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
