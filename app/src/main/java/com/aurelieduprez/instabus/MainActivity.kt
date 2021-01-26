@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurelieduprez.instabus.data.ApiResponse
 import com.aurelieduprez.instabus.data.Station
 import com.google.android.gms.tasks.Tasks.await
+import kotlinx.android.synthetic.main.fragment_item.view.*
 import kotlinx.android.synthetic.main.post_preview.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -82,8 +83,6 @@ class MainActivity : AppCompatActivity() {
             val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
             val navController = findNavController(R.id.nav_host_fragment)
-            // Passing each menu ID as a set of Ids because each
-            // menu should be considered as top level destinations.
             val appBarConfiguration = AppBarConfiguration(
                 setOf(
                     R.id.navigation_home, R.id.navigation_dashboard
@@ -102,10 +101,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     public fun showDetails(v: View){
-        //to get station name
-        //val stationName:String = intent.getStringExtra("EXTRA_STATION_NAME")
-        //Log.d ("ICICICICIICICI", stationName)
         setContentView(R.layout.station_preview)
+        val t1 = findViewById<View>(R.id.street_name) as TextView
+        t1.text = v.content.text
+
     }
 
     public fun returnButton (v: View){
