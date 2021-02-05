@@ -16,7 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 /**
- Fragment qui définit la mise en place de la map et les marqueurs a chaque station
+Fragment to display the Map fragment and set markers for each station
  * */
 class MapsFragment : Fragment() {
 

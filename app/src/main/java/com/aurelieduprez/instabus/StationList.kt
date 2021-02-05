@@ -17,7 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- Affichage de la liste des stations pour le layout fragment_home
+display the station list in fragment_home
  */
 class StationList : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {

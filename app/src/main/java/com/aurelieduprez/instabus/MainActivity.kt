@@ -54,11 +54,11 @@ class MainActivity : AppCompatActivity() {
                     123)
             }
         }
-
+//splash screen at first when opening the app
         setContentView(R.layout.activity_splash_screen)
         if (station.isEmpty()){
             setContentView(R.layout.activity_splash_screen)
-            // Setup retrofit
+            // Setup retrofit to fetch stations infos
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://barcelonaapi.marcpous.com")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             val api = retrofit.create(Api::class.java)
 
             api.fetchAllStations().enqueue(object : Callback<ApiResponse> {
+                //error message
                 override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, "Internet connection is needed.", Toast.LENGTH_LONG).show()
 
@@ -99,24 +100,28 @@ class MainActivity : AppCompatActivity() {
         startActivity(mainActivityIntent)
         finish()
     }
-
+//fetch street name of bus station for details view
     public fun showDetails(v: View){
         setContentView(R.layout.station_preview)
         val t1 = findViewById<View>(R.id.street_name) as TextView
         t1.text = v.content.text
 
     }
-
+//button to return to the station list
     public fun returnButton (v: View){
         val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
         startActivity(mainActivityIntent)
         finish()
     }
 
+
+    //redirect when clickling on the pic posting part
     public fun postPic(v:View){
         setContentView(R.layout.post_preview)
     }
 
+
+    //view to add a picture
     public fun addPic(v:View){
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.type = "image/*"

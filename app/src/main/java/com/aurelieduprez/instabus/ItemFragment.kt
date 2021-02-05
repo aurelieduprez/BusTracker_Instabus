@@ -14,7 +14,7 @@ import com.aurelieduprez.instabus.data.Station
 
 
 /**
-Fragment liste d'items
+Frament list of items
  */
 class ItemFragment : Fragment() {
 

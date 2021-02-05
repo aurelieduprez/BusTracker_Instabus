@@ -4,7 +4,7 @@ import com.aurelieduprez.instabus.data.ApiResponse
 import retrofit2.Call
 import retrofit2.http.GET
 /**
-Cette interface sert à déclarer le chemin d'accès pour l'API (base url)
+This interface is used to call the fetchAllStations from the API, and precises the rest of the base URL
  */
 interface Api {
 

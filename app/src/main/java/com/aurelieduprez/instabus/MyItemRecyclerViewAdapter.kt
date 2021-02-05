@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.aurelieduprez.instabus.data.Station
 /**
- adaptateur pour chaque item de la liste, mise en page du view holder de chaque item
+adapter for each item, viewholder for each item
+
  * */
 class MyItemRecyclerViewAdapter(
     private val values: List<Station>
